@@ -1,3 +1,4 @@
+# Prototype 1 (as generator)
 
 def find(array, target):
     for i in range(len(array)): 
@@ -16,7 +17,7 @@ def find_n_replace(string, *args, **kwargs):
     yield string[last_index:], None
 
 def main():
-    file_path = "proprepros/res/"
+    file_path = "proprepros/test/"
     with open(file_path + "test.ccc", "r") as file:
         read = file.read()
     
