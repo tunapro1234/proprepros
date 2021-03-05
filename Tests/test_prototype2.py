@@ -48,6 +48,19 @@ int main(){
     return 0;
 }
 """
+test1_output4 = """
+#include <stdio.h>
+
+/** 
+def _range(a):
+    return ", ".join([str(i) for i in range(a)])
+**/
+
+int main(){
+    int a[] = {/*(_range(10))*/0, 1, 2, 3, 4, 5, 6, 7, 8, 9};
+    return 0;
+}
+"""
 
 test_path = "proprepros/test/files/test.c"
 
@@ -78,3 +91,7 @@ class TestProtoType2(unittest.TestCase):
     def test_process_str_replace_exec(self):
         rv = process_string(test1_c, replace_eval=False, replace_exec=True)
         self.assertEqual(rv, test1_output3)
+
+    def test_process_str_replace_none(self):
+        rv = process_string(test1_c, replace_eval=False, replace_exec=False)
+        self.assertEqual(rv, test1_output4)
