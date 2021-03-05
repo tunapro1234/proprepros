@@ -63,13 +63,17 @@ def process_string(
         raise Exception("Exec or eval tokens not valid")
 
     process_f1 = ""
-    for string, _exec in find_n_replace(string, **exec_tokens):
-        process_f1 += string if replace_exec else string + _exec
+    for _str, _exec in find_n_replace(string, **exec_tokens):
+        process_f1 += _str if replace_exec or _exec is None else (
+            _str + exec_tokens["start_token"] + _exec +
+            exec_tokens["end_token"])
         if _exec is not None: exec(_exec)
 
     process_f2 = ""
-    for string, _eval in find_n_replace(process_f1, **eval_tokens):
-        process_f2 += string if replace_eval else string + _eval
+    for _str, _eval in find_n_replace(process_f1, **eval_tokens):
+        process_f2 += _str if replace_eval or _eval is None else (
+            _str + eval_tokens["start_token"] + _eval +
+            eval_tokens["end_token"])
         if _eval is not None: process_f2 += eval(_eval)
 
     return process_f2
