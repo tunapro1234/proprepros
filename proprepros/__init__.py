@@ -1,0 +1,1 @@
+from proprepros.test.prototype2 import *
