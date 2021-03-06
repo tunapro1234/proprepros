@@ -1,4 +1,13 @@
 from ppps.res import glob as g
+"""
+Öncelikle try except koymam gerekiyor
+
+ayrıca str içinde olanları algılamama tarzında şeyler de yapmam gerekiyor
+bu tarz işlemler için dbex kullanabilirim
+
+birden fazla dosya aynı anda yükleme
+
+"""
 
 
 def find(array, target):
