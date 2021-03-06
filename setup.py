@@ -1,6 +1,6 @@
 from setuptools import setup
 
-__version__ = "0.0.10.3"
+__version__ = "0.0.10.5"
 
 
 def read_me():
@@ -24,7 +24,7 @@ setup(
     description="pre-preprocessor for C/C++",
     keywords=["c", "preprocessor", "pre-preprocessor"],
     download_url=
-    "https://github.com/tunapro1234/proprepros/archive/v0.0.10.3-alpha.tar.gz",
+    "https://github.com/tunapro1234/proprepros/archive/v0.0.10.5-alpha.tar.gz",
     classifiers=[
         'Intended Audience :: Developers',
         'Development Status :: 3 - Alpha',

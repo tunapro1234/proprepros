@@ -1,4 +1,4 @@
-from proprepros.test.prototype2 import process_file, process_string
+from ppps.test.prototype2 import process_file, process_string
 import unittest
 import os
 

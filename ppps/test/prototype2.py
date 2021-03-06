@@ -1,5 +1,5 @@
 # Prototype 2
-from proprepros.res import glob as g
+from ppps.res import glob as g
 
 
 def find(array, target):
