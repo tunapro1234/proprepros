@@ -1,6 +1,6 @@
 from setuptools import setup
 
-__version__ = "0.0.10"
+__version__ = "0.0.10.1"
 
 
 def read_me():
@@ -8,8 +8,10 @@ def read_me():
         return file.read()
 
 
+# /tunapro1234/proprepros/archive/v0.0.10-alpha.tar.gz
+
 setup(
-    name="dbex",
+    name="ppps",
     license="MIT",
     zip_safe=False,
     packages=["ppps"],
@@ -19,10 +21,10 @@ setup(
     include_package_data=True,
     author_email="tunagul54@gmail.com",
     url="https://github.com/tunapro1234/proprepros/",
-    description="json-like encoder and decoder",
-    keywords=["json", "file", "encryption", "save", "data"],
+    description="pre-preprocessor for C/C++",
+    keywords=["c", "preprocessor", "pre-preprocessor"],
     download_url=
-    "https://github.com/tunapro1234/proprepros/archive/v0.0.10.tar.gz",
+    "https://github.com/tunapro1234/proprepros/archive/v0.0.10.1-alpha.tar.gz",
     classifiers=[
         'Intended Audience :: Developers',
         'Development Status :: 3 - Alpha',
