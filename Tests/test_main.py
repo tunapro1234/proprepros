@@ -1,4 +1,4 @@
-from ppps.test.prototype2 import process_file, process_string
+import ppps.lib.main as ppps
 import unittest
 import os
 
@@ -65,7 +65,7 @@ int main(){
 test_path = "ppps/test/files/test.c"
 
 
-class TestProtoType2(unittest.TestCase):
+class TestMain(unittest.TestCase):
     output_path = None
 
     def setUp(self):
@@ -78,20 +78,26 @@ class TestProtoType2(unittest.TestCase):
 
     def test_process_file(self):
         self.output_path = test_path + ".c"
-        process_file(test_path, self.output_path)
+        ppps.process_file(test_path, self.output_path)
 
         with open(self.output_path, "r") as file:
             # print(repr(file.read()))
             self.assertEqual(file.read(), test1_output1)
 
     def test_process_str_replace_eval(self):
-        rv = process_string(test1_c, replace_eval=True, replace_exec=False)
+        rv = ppps.process_string(test1_c,
+                                 replace_eval=True,
+                                 replace_exec=False)
         self.assertEqual(rv, test1_output2)
 
     def test_process_str_replace_exec(self):
-        rv = process_string(test1_c, replace_eval=False, replace_exec=True)
+        rv = ppps.process_string(test1_c,
+                                 replace_eval=False,
+                                 replace_exec=True)
         self.assertEqual(rv, test1_output3)
 
     def test_process_str_replace_none(self):
-        rv = process_string(test1_c, replace_eval=False, replace_exec=False)
+        rv = ppps.process_string(test1_c,
+                                 replace_eval=False,
+                                 replace_exec=False)
         self.assertEqual(rv, test1_output4)
